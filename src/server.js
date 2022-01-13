@@ -18,7 +18,7 @@ mongoose.connect(process.env.DB_URL, {
 
 // Define routes
 app.use(routes);
-app.get("/", function (req, res) {
+app.use("/", function (req, res) {
   res.send("API - Books Library");
 });
 app.use("*", (req, res) => {
