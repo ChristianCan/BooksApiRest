@@ -21,7 +21,7 @@ app.use(routes);
 app.use("/", function (req, res) {
   res.send("API - Books Library");
 });
-app.use("*", (req, res) => {
+app.use((req, res) => {
   res.status(404).json({
     message: "Ups!!! Resource not found.",
   });
