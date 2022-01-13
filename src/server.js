@@ -18,10 +18,10 @@ mongoose.connect(process.env.DB_URL, {
 
 // Define routes
 app.use(routes);
-app.use("/", function (req, res) {
+app.get("/", function (req, res) {
   res.send("API - Books Library");
 });
-app.use((req, res) => {
+app.use("*", (req, res) => {
   res.status(404).json({
     message: "Ups!!! Resource not found.",
   });
